@@ -130,13 +130,13 @@ height.fixed.px: 50
 if: { !navbar-mobile.open }
 align-self: center
 src: $navbar-mobile.menu
-height.fixed.px: 20
+height.fixed.px: 14
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = true)
 
 -- ftd.image:
 if: { navbar-mobile.open }
 align-self: center
-height.fixed.px: 20
+height.fixed.px: 14
 src: $navbar-mobile.close
 $on-click$: $ftd.set-bool($a = $navbar-mobile.open, v = false)
 
@@ -288,7 +288,7 @@ padding-horizontal.px: 32
 border-radius.px: 4
 border-width.px if { navbar-desktop.is-active }: 2
 background.linear-gradient: $lg
-border-color if { navbar-desktop.is-active }: $colors.cta-primary-hover-
+border-color if { navbar-desktop.is-active }: $colors.accent-primary-
 $on-mouse-enter$: $ftd.set-bool($a = $navbar-desktop.is-active, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $navbar-desktop.is-active, v = false)
 color: $colors.text-
@@ -467,6 +467,7 @@ string text-1:
 string text-2:
 string val-2:
 string button:
+boolean $is-active: false
 
 -- ftd.column:
 width: fill-container
@@ -584,6 +585,9 @@ padding-vertical.px: 20
 padding-horizontal.px: 10
 border-width.px: 1
 border-radius.px: 6
+background.linear-gradient if { navbar-desktop.is-active }: $lg
+$on-mouse-enter$: $ftd.set-bool($a = $image-with-button.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $image-with-button.is-active, v = false)
 border-color: $colors.accent-primary-
 role: $inherited.types.copy-regular
 color: $colors.text-
