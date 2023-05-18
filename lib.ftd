@@ -585,7 +585,7 @@ padding-vertical.px: 20
 padding-horizontal.px: 10
 border-width.px: 1
 border-radius.px: 6
-background.linear-gradient if { navbar-desktop.is-active }: $lg
+background.linear-gradient if { image-with-button.is-active }: $lg
 $on-mouse-enter$: $ftd.set-bool($a = $image-with-button.is-active, v = true)
 $on-mouse-leave$: $ftd.set-bool($a = $image-with-button.is-active, v = false)
 border-color: $colors.accent-primary-
