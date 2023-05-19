@@ -514,6 +514,9 @@ padding-vertical.px: 16
 padding-horizontal.px: 10
 border-width.px: 1
 border-radius.px: 6
+background.linear-gradient if { image-with-button.is-active }: $lg
+$on-mouse-enter$: $ftd.set-bool($a = $image-with-button.is-active, v = true)
+$on-mouse-leave$: $ftd.set-bool($a = $image-with-button.is-active, v = false)
 border-color: $colors.accent-primary-
 role: $inherited.types.copy-regular
 color: $colors.text-
@@ -914,7 +917,8 @@ width: fill-container
 role: $inherited.types.heading-large
 color: $colors.text-
 align-self: center
-margin-vertical.px: 100
+margin-bottom.px if { ftd.device == "desktop" }: 100
+margin-bottom.px if { ftd.device == "mobile" }: 32
 
 -- ftd.column:
 width: fill-container
